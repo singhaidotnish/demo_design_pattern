@@ -6,7 +6,7 @@ requirements = get_requirements()
 dev_requirements = get_dev_requirements()
 
 setuptools.setup(
-    name='demo_design_pattern',
+    name='singhaidotnish',
     version='0.1',
     description='demo of simple api',
     python_requires='==3.9.*',

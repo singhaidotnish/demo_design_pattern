@@ -1,4 +1,3 @@
-# add a command line interface to add records, and display/convert/filter the whole data set
 import argparse
 from .test_04 import *
 
@@ -38,9 +37,9 @@ def main():
         print('+++ add name phone address mandatory')
         return
     if args.display and args.filter and args.filetype:
-
         print('+++ call test_04 ui.filter')
         return
+
 
 if __name__ == '__main__':
     main()

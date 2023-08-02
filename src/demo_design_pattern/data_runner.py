@@ -58,7 +58,7 @@ class SpinBoxDelegate(QStyledItemDelegate):
         return editor
 
     def setEditorData(self, spinBox, index):
-        value = index.model().data(index, Qt.EditRole)
+        value = index.model().model(index, Qt.EditRole)
 
         spinBox.setValue(value)
 
