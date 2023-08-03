@@ -9,10 +9,6 @@ class FileFactory:
     ALL_TYPES = ['Json', 'Yaml']
 
     def file_referencer(self, name):
-        # if name == 'Json':
-        #     return Json()
-        # elif name == 'Yaml':
-        #     return Yaml()
         if name in self.ALL_TYPES:
             return eval('{}()'.format(name))
         else:
@@ -42,6 +38,7 @@ class Json(IFile):
         try:
             if read_from:
                 _data = json.dumps(read_from, indent=4)
+                _data = json.loads(_data)
             else:
                 with open(self.file, 'r') as jsonFile:
                     _data = json.load(jsonFile)
@@ -74,10 +71,18 @@ class Yaml(IFile):
         self.name = 'Yaml'
         self.file = os.path.join(os.path.dirname(__file__), Yaml.DEMO_YAML)
 
-    def read(self):
-        with open(self.file, 'r') as stream:
-            data_loaded = yaml.safe_load(stream) or []
-        return data_loaded
+    def read(self, read_from=None):
+        _data = None
+        try:
+            if read_from:
+                _data = json.dumps(read_from, indent=4)
+                _data = json.loads(_data)
+            else:
+                with open(self.file, 'r') as yamlFile:
+                    _data = yaml.safe_load(yamlFile) or []
+        except yaml.YAMLError as e:
+            raise Exception('Error Reading Yaml {e}')
+        return _data
 
     def write(self, data):
         try:

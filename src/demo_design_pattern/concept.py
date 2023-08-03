@@ -1,16 +1,13 @@
 from typing import Dict
-import test_05
+from src.demo_design_pattern import container
 import pprint
 
 
 class Model:
     """Data Store Class"""
     def __init__(self, _file):
-        self.first_file = test_05.FileFactory().file_referencer(_file)
+        self.first_file = container.FileFactory().file_referencer(_file)
         self.data = self.first_file.read()
-
-    # def __get__(self, obj, klas):
-    #     return [item for item in self.data['data']]
 
 
 class BusinessLogic:
@@ -18,7 +15,6 @@ class BusinessLogic:
     def __init__(self, filetype):
         self.filetype = filetype
         self.model = Model(self.filetype)
-        # self.model.first_file = self.model.first_file
 
     def user_list(self) -> list[Dict]:
         return [item for item in self.model.data["data"]]
@@ -32,7 +28,7 @@ class BusinessLogic:
 
     def convert(self, filetype_to):
         read_handle = self.model.first_file.read()
-        second_file = test_05.FileFactory().file_referencer(filetype_to)
+        second_file = container.FileFactory().file_referencer(filetype_to)
         return second_file.read(read_handle)
 
     def display(self):
@@ -42,12 +38,14 @@ class BusinessLogic:
         read_handle = self.model.first_file.read()
         # remove wild character from search_string
         _str = ''.join(letter for letter in search_string if letter.isalnum())
-        filtered_list = [dictionary for dictionary in read_handle if _str in dictionary['name']]
+        filtered_list = [dictionary for dictionary in read_handle['data'] if _str in dictionary['name']]
         return filtered_list
 
-    def list_of_file_types(self):
-        _file_factory = test_05.FileFactory()
+    @staticmethod
+    def list_of_file_types():
+        _file_factory = container.FileFactory()
         return _file_factory.ALL_TYPES
+
 
 class Ui:
     """UI interaction class"""
@@ -90,20 +88,18 @@ class Ui:
     def call_convert(self, filetype_to: str) -> None:
         filetype_from = self.business_logic.model.first_file.name
         converted_file = self.business_logic.convert(filetype_to)
+
+        print(f'FROM {{{filetype_from}}} TO {{{filetype_to}}}:\n')
         if converted_file:
-            print(f'FROM {filetype_from} :\n')
-            if isinstance(converted_file, Dict) and isinstance(converted_file['data'], list):
-                for user in converted_file['data']:
-                    print(
-                        f"Name: {user.get('name')}, "
-                        + f"Phone: {user.get('phone')}, "
-                        + f"Address: {user.get('address')}"
-                    )
+            if isinstance(converted_file, Dict):
+                if isinstance(converted_file['data'], list):
+                    pprint.pprint(converted_file)
         else:
             print(f"That file '{filetype_to}' does not exist in the items")
 
     def call_filter(self, search_string: str) -> None:
         filtered_list = self.business_logic.filter(search_string)
+
         if filtered_list:
             print('FILTERED INFORMATION: ')
             if isinstance(filtered_list, list):
@@ -116,15 +112,16 @@ class Ui:
         else:
             print(f"That criteria {search_string} did not match")
 
-    def call_display(self, filetype_from) -> None:
+    def call_display(self) -> None:
         # TODO add html format to display
-        print(f'FROM {filetype_from} :\n')
+        # infoFromJson = json.loads(jsonfile)
+        # print(json2html.convert(json = infoFromJson))
+        filetype_from = self.business_logic.model.first_file.name
         display_data = self.business_logic.display()
         if display_data:
-            print('DISPLAYED DATA: ')
+            print(f'DISPLAY DATA FROM {{{filetype_from}}} FILE: ')
             if isinstance(display_data, Dict):
-                display_data = [display_data]
-                for item in display_data:
+                for item in display_data['data']:
                     print(
                         f"Name: {item.get('name')}, "
                         + f"Phone: {item.get('phone')}, "
@@ -140,16 +137,22 @@ class Ui:
             for each in all_types:
                 print(f"{each}")
         else:
-            print(f"Error reading object {test_05.FileFactory}")
+            print(f"Error reading object {container.FileFactory}")
 
 
 def main():
-    filetype = 'Yaml'
+    filetype = 'Json'
     ui = Ui(filetype)
     # ui.get_user_list()
     # ui.get_item_information('A')
     # ui.get_item_information("C")
-    data = {'name': 'C', 'phone': 23463467443414, 'address': 'a\\b building no Y, floor Y, landmark, city, state pincode '}
+    # data = {'name': 'C', 'phone': 23463467443414, 'address': 'a\\b building no Y, floor Y, landmark, city, state pincode '}
+    # ui.call_add(data)
+    # ui.call_display()
+    # ui.call_list_of_all_types()
+    # ui.call_filter('C*')
+    # ui.call_convert('Yaml')
+    data = {'name': 'D', 'phone': 98787563429, 'address': 'a\\b building no Y, floor Y, landmark, city, state pincode '}
     ui.call_add(data)
 
 

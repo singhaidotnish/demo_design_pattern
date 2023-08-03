@@ -1,12 +1,13 @@
 """Custom exceptions"""
 
 
-class BotException(Exception):
+class MyException(Exception):
     """A base exception for all bot specific errors"""
 
 
-class InvalidContextError(BotException):
+class InvalidContextError(MyException):
     """Exception raised when context is invalid"""
 
-class YAMLResolveError(BotException):
-    """Exception raised while resolving a config file"""
+
+class YAMLError(MyException):
+    """Exception raised while operating file"""
