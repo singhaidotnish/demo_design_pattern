@@ -1,5 +1,5 @@
 import argparse
-import concept
+from . import concept as concept
 
 
 def main():
@@ -20,9 +20,9 @@ def main():
     parser.add_argument(
         '-fto', '--filetype_to', help="File type options yaml or json")
     parser.add_argument(
-        '-fl', '--filter', help="requires parameter like Joe*")
+        '-fl', '--filter', help="Requires parameter like Joe*")
     parser.add_argument(
-        '-at', '--all_types', help='All file types')
+        '-at', '--all_types', help='List all file types', action='store_true')
 
     args = parser.parse_args()
 
@@ -35,11 +35,11 @@ def main():
     if args.display and not args.filetype:
         parser.error('The -Display argument requires --filetype')
         return
-    if args.add and not args.filetype:
-        parser.error('The -Add argument requires filetype ')
-        return
     if args.add and not (args.name and args.phone and args.address):
         parser.error('The -Add argument requires -Name and -Phone and -Address ')
+        return
+    if args.add and not args.filetype:
+        parser.error('The -Add argument requires filetype too')
         return
     if args.add and (args.display or args.convert or args.filter):
         parser.error('The -Add argument does not require the -Display or -Convert or -Filter')

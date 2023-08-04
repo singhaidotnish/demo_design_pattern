@@ -10,16 +10,16 @@ from src.demo_design_pattern import concept
 
 @pytest.fixture
 def valid_searchstring():
-    return 'B*'
+    return 'FF*'
 
 
 @pytest.fixture
 def invalid_searchstring():
-    return 'abracadabra'
+    return 'A*'
 
 
 def test_valid_filter(valid_searchstring):
-    filetype = 'Json'
+    filetype = 'Yaml'
     ui = concept.Ui(filetype)
     ui.call_filter(valid_searchstring)
 

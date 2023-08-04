@@ -75,8 +75,8 @@ class Yaml(IFile):
         _data = None
         try:
             if read_from:
-                _data = json.dumps(read_from, indent=4)
-                _data = json.loads(_data)
+                _data = yaml.safe_dump(read_from, indent=4)
+                _data = yaml.safe_load(_data)
             else:
                 with open(self.file, 'r') as yamlFile:
                     _data = yaml.safe_load(yamlFile) or []
@@ -93,18 +93,3 @@ class Yaml(IFile):
         except (IOError, ) as e:
             return False
         return _tmp_data
-
-
-if __name__ == '__main__':
-    first_file = FileFactory().file_referencer('Json')
-    # data = {'name': 'A', 'phone': 1234567890, 'address': 'a\\b building no X, floor X, landmark, city, state pincode '}
-    # first_file.write(data)
-    r = first_file.read()
-    print('+++ r ', r)
-
-    # #
-    # second_file = FileFactory().file_referencer('Yaml')
-    # data = {'name': 'B', 'phone': 232323232323, 'address': 'a\\b building no Y, floor Y, landmark, city, state pincode '}
-    # second_file.write(data)
-    # r = second_file.read()
-    # print('+++ r ', r)

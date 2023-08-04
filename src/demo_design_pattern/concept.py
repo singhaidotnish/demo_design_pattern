@@ -1,5 +1,5 @@
 from typing import Dict
-from src.demo_design_pattern import container
+from . import container as container
 import pprint
 
 
@@ -138,23 +138,3 @@ class Ui:
                 print(f"{each}")
         else:
             print(f"Error reading object {container.FileFactory}")
-
-
-def main():
-    filetype = 'Json'
-    ui = Ui(filetype)
-    # ui.get_user_list()
-    # ui.get_item_information('A')
-    # ui.get_item_information("C")
-    # data = {'name': 'C', 'phone': 23463467443414, 'address': 'a\\b building no Y, floor Y, landmark, city, state pincode '}
-    # ui.call_add(data)
-    # ui.call_display()
-    # ui.call_list_of_all_types()
-    # ui.call_filter('C*')
-    # ui.call_convert('Yaml')
-    data = {'name': 'D', 'phone': 98787563429, 'address': 'a\\b building no Y, floor Y, landmark, city, state pincode '}
-    ui.call_add(data)
-
-
-if __name__ == "__main__":
-    main()

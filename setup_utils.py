@@ -2,6 +2,7 @@
 def get_requirements():
     return _get_py_modules("requirements.txt")
 
+
 def get_dev_requirements():
     return _get_py_modules("dev-requirements.txt")
 

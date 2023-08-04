@@ -2,7 +2,7 @@
 
 
 class MyException(Exception):
-    """A base exception for all bot specific errors"""
+    """A base exception for all demo specific errors"""
 
 
 class InvalidContextError(MyException):
