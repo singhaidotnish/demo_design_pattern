@@ -65,7 +65,7 @@
 
 [![Product Name Screen Shot][product-screenshot]]()
 
-How to implement a design pattern to make a tool that has SOLID principles.
+Make a tool that is built on "SOLID" principles.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,12 +76,6 @@ How to implement a design pattern to make a tool that has SOLID principles.
 This is a simple API allowing you to add new records, filter users. Display data in Json and Yaml. A CLI exists 
 to add, display, convert and filter the whole data set. It is written so as to have an extendable system in future. No Validation
 is included at this point as the focus is only on patterns.
-
-This can be run from command line or installed as a module
-#### 1. cd ~ 
-#### 2. git clone https://github.com/singhaidotnish/singhaidotnish.git
-#### 3. cd singhaidotnish
-#### 4. pip install -e .[dev] ( for testing )
 
 
 ### Prerequisites
@@ -99,17 +93,22 @@ virtualenv .venv
 .venv\Scripts\activate.bat
 ```
 - cd into cloned repo and run
+```
+cd singhaidotnish
+```
+Ready to test.
+
+#### For testing module  
 ```sh
 pip install -e .[dev]
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### For command line see usage below
+#### For command line see examples below
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
 
 
 To make use of new file type follow these steps
@@ -154,7 +153,7 @@ class Yaml(IFile):
         return _tmp_data
 ```
 
-
+<a name="readme-examples"></a>
 ## Examples:
 
 #### Add -
@@ -271,7 +270,7 @@ Project Link: [https://github.com/singhaidotnish/singhaidotnish](https://github.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [![Animal Logic Pipeline ][animal-logic]]() - I am grateful to the pipeline team at Animal Logic for giving this task.
+* [![Animal Logic Pipeline ][animal-logic]]() - I am Thankful to the pipeline team at Animal Logic for giving this task.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
