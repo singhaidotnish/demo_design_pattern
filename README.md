@@ -39,9 +39,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -51,9 +48,10 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#tests">Tests</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#challenges">Challenges</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -98,6 +96,9 @@ cd singhaidotnish
 ```
 Ready to test.
 
+<!-- USAGE EXAMPLES -->
+## Usage
+
 #### For testing module  
 ```sh
 pip install -e .[dev]
@@ -106,10 +107,6 @@ pip install -e .[dev]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### For command line see examples below
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
 
 To make use of new file type follow these steps
 
@@ -153,7 +150,6 @@ class Yaml(IFile):
         return _tmp_data
 ```
 
-<a name="readme-examples"></a>
 ## Examples:
 
 #### Add -
