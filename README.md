@@ -102,20 +102,13 @@ virtualenv .venv
 pip install -e .[dev]
 ```
 
-1. Open new terminal
-2. Activate virtual env
-3. cd to package directory
-4. pip install -e [dev] .
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+#### For command line see usage below
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Scalability - Show that file types can be extended. Where are the changes made ?
 
 To make use of new file type follow these steps
 
