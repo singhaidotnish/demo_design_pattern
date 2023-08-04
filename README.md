@@ -60,7 +60,6 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -79,16 +78,18 @@ to add, display, convert and filter the whole data set. It is written so as to h
 is included at this point as the focus is only on patterns.
 
 This can be run from command line or installed as a module
-#### 1. Download, from ... 
-#### 2. Goto, to folder singhaidotnish
-#### 3. Run, pip install -e
+#### 1. cd ~ 
+#### 2. git clone https://github.com/singhaidotnish/singhaidotnish.git
+#### 3. cd singhaidotnish
+#### 4. pip install -e .[dev] ( for testing )
 
 
 ### Prerequisites
 
 #### Additional Modules required.
-json2html - To convert json to html format to display
-pytest - Testing 
+* json2html
+* pytest 
+* pyyaml 
 
 ### Installation
 
@@ -110,14 +111,15 @@ pip install -e .[dev]
 ## Usage
 
 
+
 To make use of new file type follow these steps
 
 1. Add new file type to class variable ALL_TYPES of class FileFactory
 ```
-    ALL_TYPES = ['Json', 'Yaml']
+    ALL_TYPES = ['Json', 'Yaml', '<new_file_type>']
 ```
 
-2. Add class description as below. replace "yaml" with new file type. 
+2. Based on class description below, replace "yaml" with new file type. 
    and use its corresponding load and dump methods to read and write.
 ```
 class Yaml(IFile):
@@ -153,28 +155,37 @@ class Yaml(IFile):
 ```
 
 
-Commands:
+## Examples:
 
-Add -
+#### Add -
 
 ```
 python -m demo_design_pattern.cli --add --name FF --phone 9090909090 --address "a\\b building no X, floor X, landmark, city, state pincode" --filetype Yaml
 ```
 
-
-image 
+[![Add Command][add]]()
 
 Display - 
 ```
 python -m demo_design_pattern.cli --display --filetype Yaml
 ```
 
-image 
+[![Display Command][display]]() 
 
 Convert -
 ```
 python -m demo_design_pattern.cli --convert --filetype Yaml --filetype_to Json
 ```
+
+[![Convert Command][convert]]() 
+
+
+Filter -
+```
+python -m demo_design_pattern.cli --filter A* --filetype Yaml
+```
+
+[![Filter Command][filter]]() 
 
 
 List all file types - 
@@ -182,30 +193,48 @@ List all file types -
 python -m demo_design_pattern.cli --all_types
 ```
 
+[![List All Types Command][list-all-types]]() 
+
 
 ## Tests:
 
-First go to tests folder 
-Command : pytest -k add -v
+Go to tests folder 
+
+#### Test Add 
+```
+pytest -k add -v
+```
 
 [![Test Add][test-add]]()
 
-Command : pytest -k convert -v
+#### Test Convert
+
+```
+pytest -k convert -v
+```
 
 [![Test Convert][test-convert]]()
 
-Command : pytest -k filter -v
+#### Test Filter
+
+```
+pytest -k filter -v
+```
 
 [![Test Convert][test-filter]]()
 
-Command : pytest -k display -v
+
+#### Test Display
+
+```
+pytest -k display -v
+```
 
 [![Test Convert][test-display]]()
 
 <!--_For more examples, please refer to the [Documentation](https://example.com)_-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -226,12 +255,13 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- CHALLENGES -->
 ## Challenges
 1. Converting json to yaml is not working. It shows json format instead of yaml format on terminal
-2. 
+2. Writing Document is more challenging then writing code. 
+3. Having package by name singhaidotnish is unintentional. Normally I will give meaningful names.
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@knishua](https://twitter.com/knishua) - singhai.nish@gmail.com
+Your Name - [@knishua](https://twitter.com/knishua) - singhai(dot)nish(at)gmail.com
 
 Project Link: [https://github.com/singhaidotnish/singhaidotnish](https://github.com/singhaidotnish/singhaidotnish)
 
@@ -267,3 +297,8 @@ Project Link: [https://github.com/singhaidotnish/singhaidotnish](https://github.
 [test-display]: images/test_display.png
 [test-filter]: images/test_filter.png
 [animal-logic]: images/animal_logic.jpg
+[add]: images/add.png
+[display]: images/display.png
+[filter]: images/filter.png
+[convert]: images/convert.png
+[list-all-types]: images/list_all_types.png
