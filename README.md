@@ -250,8 +250,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- CHALLENGES -->
 ## Challenges
 1. Converting json to yaml is not working. It shows json format instead of yaml format on terminal
-2. Writing Document is more challenging then writing code. 
-3. Having package by name singhaidotnish is unintentional. Normally I will give meaningful names.
+2. Writing Document is more challenging then writing code.
 
 <!-- CONTACT -->
 ## Contact
