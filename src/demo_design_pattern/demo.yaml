@@ -1,0 +1,31 @@
+data:
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: A
+  phone: 4545454545
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: B
+  phone: 232323232323
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: B
+  phone: 232323232323
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: B
+  phone: 232323232323
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: C
+  phone: 23463467443414
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: C
+  phone: 23463467443414
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: C
+  phone: 23463467443414
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: D
+  phone: 98787563429
+- address: 'a\b building no Y, floor Y, landmark, city, state pincode '
+  name: D
+  phone: 98787563429
+- address: a\\b building no X, floor X, landmark, city, state pincode
+  name: FF
+  phone: '9090909090'

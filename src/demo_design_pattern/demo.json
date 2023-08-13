@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "name": "A",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        },
+        {
+            "name": "A",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        },
+        {
+            "name": "A",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        },
+        {
+            "name": "B",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        },
+        {
+            "name": "C",
+            "phone": 23463467443414,
+            "address": "a\\b building no Y, floor Y, landmark, city, state pincode "
+        },
+        {
+            "name": "C",
+            "phone": 23463467443414,
+            "address": "a\\b building no Y, floor Y, landmark, city, state pincode "
+        },
+        {
+            "name": "C",
+            "phone": 23463467443414,
+            "address": "a\\b building no Y, floor Y, landmark, city, state pincode "
+        },
+        {
+            "name": "D",
+            "phone": 98787563429,
+            "address": "a\\b building no Y, floor Y, landmark, city, state pincode "
+        },
+        {
+            "name": "E",
+            "phone": "9090909090",
+            "address": "a\\\\b building no Y, floor Y, landmark, city, state pincode "
+        },
+        {
+            "name": "Z",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        },
+        {
+            "name": "Z",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        },
+        {
+            "name": "Z",
+            "phone": 1234567890,
+            "address": "a\\b building no X, floor X, landmark, city, state pincode "
+        }
+    ]
+}
